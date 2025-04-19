@@ -84,4 +84,4 @@ def remove_premium(bot, message, user_data, data_lock, ADMIN_IDS):
             else:
                 bot.reply_to(message, f"{STYLES['star']} User not found")
     except:
-        bot.reply_to(message, f"{STYLES['arrow']} Usage: /remove user_id"
+        bot.reply_to(message, f"{STYLES['arrow']} Usage: /remove user_id")
