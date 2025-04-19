@@ -163,4 +163,4 @@ def handle_download_choice(bot, call, media_type, query, user_data, data_lock, A
                     logger.error(f"Failed to delete {filename}: {str(e)}")
 
     # Run download in a separate thread for long processes
-    Thread(target=process_download).start(
+    Thread(target=process_download).start()
