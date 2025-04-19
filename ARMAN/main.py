@@ -125,4 +125,4 @@ def handle_message(message):
 if __name__ == "__main__":
     os.makedirs("downloads", exist_ok=True)
     logger.info("Bot starting...")
-    bot.infinity_polling(
+    bot.infinity_polling()
