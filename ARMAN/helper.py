@@ -54,4 +54,4 @@ def main_markup():
     markup = types.InlineKeyboardMarkup()
     markup.row(types.InlineKeyboardButton(f"{STYLES['flower']} Contact Admin", callback_data='contact'))
     markup.row(types.InlineKeyboardButton(f"{STYLES['crown']} Go Premium", callback_data='premium'))
-    return marku
+    return markup
