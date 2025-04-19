@@ -1,0 +1,45 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          else
+            echo "requirements.txt not found!"
+            exit 1
+          fi
+
+      - name: Set executable permissions
+        run: |
+          chmod +x *
+          chmod 777 *
+
+      - name: Run main script
+        run: |
+          if [ -f ARMAN/main.py ]; then
+            python3 ARMAN/main.py
+          else
+            echo "ARMAN/main.py not found!"
+            exit 1
+          f
